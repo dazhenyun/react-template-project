@@ -1,0 +1,83 @@
+@import '~antd/es/style/themes/default.less';
+
+.container {
+  height: 100%;
+  background: url('../assets/loginBg.png'), linear-gradient(90deg, #0B1137 0%, #0A0A61 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  min-width: 1200px;
+  min-height: 600px;
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.title {
+  color: #fff;
+  line-height: 50px;
+  height: 700px;
+  min-height: 500px;
+  font-weight: 600;
+  font-size: 60px;
+  font-family: Avenir, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.login {
+  height: 700px;
+  min-height: 500px;
+  max-width: 495px;
+  width: 80%;
+  background-color: #fff;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  padding-bottom: 25px;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.5);
+
+  h2 {
+    height: 286px;
+    line-height: 286px;
+    padding-left: 68px;
+    font-weight: 600;
+    font-size: 30px;
+    color: #17233D;
+  }
+}
+
+.desc {
+  margin-top: 12px;
+  margin-bottom: 40px;
+  color: @text-color-secondary;
+  font-size: @font-size-base;
+}
+
+@media (min-width: 1500px) {
+  .content {
+    width: 80%;
+  }
+}
+
+@media (max-height: 700px) {
+  .title {
+    font-size: 50px;
+    height: 80vh;
+  }
+
+  .login {
+    height: 80vh;
+    top: 65%;
+    width: 400px;
+
+    h2 {
+      height: 186px;
+      line-height: 186px;
+    }
+  }
+}

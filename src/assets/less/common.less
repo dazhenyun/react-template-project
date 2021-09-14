@@ -1,0 +1,108 @@
+@import './reset.less';
+@import './basic.less';
+
+// 描述列表
+.ant-descriptions-item-label {
+  color: @text-color-secondary  !important;
+  width: 200px;
+}
+
+// 描述的垂直居中
+.ant-descriptions-item>span {
+  vertical-align: middle;
+}
+
+.ant-descriptions-item>span {
+  vertical-align: top;
+}
+
+// 表格里的输入框
+.ant-table-cell .ant-form-item {
+  margin-bottom: 0;
+}
+
+// 表格
+.ant-table-wrapper {
+  padding: 0 20px;
+}
+
+.noPadding .ant-table-wrapper {
+  padding: 0;
+
+  .ant-table.ant-table-middle .ant-table-tbody {
+    padding: 0
+  }
+
+  .ant-table-tbody .ant-table-row td.ant-table-cell:first-child {
+    padding-left: 12px;
+
+  }
+}
+
+.ant-table {
+  .ant-table-thead {
+    background-color: #FAFAFA;
+  }
+
+  .ant-table-thead>tr>th,
+  .ant-table-filter-column-title {
+    font-weight: bold;
+    font-family: PingFangSC-Medium;
+  }
+
+  .ant-table-tbody>tr>td {
+    border-color: #e8e8e8;
+  }
+
+  .disabled {
+    color: @gray-color;
+  }
+}
+
+.virtual-table {
+  .ant-table-cell {
+    padding-left: 30px;
+  }
+
+  .ant-table-cell span {
+    font-weight: bold;
+  }
+}
+
+// 菜单ICON
+.ant-menu-item .anticon,
+.ant-menu-submenu-title .anticon {
+  font-size: 16px;
+}
+
+// 菜单ICON
+.ant-pro-menu-item .anticon {
+  color: @primary-color;
+}
+
+/** 按照UI规范做样式覆盖**/
+
+// 面包屑
+.ant-page-header {
+  background-color: #f0f2f5 !important;
+  padding-bottom: 8px !important;
+  padding-top: 8px !important;
+}
+
+// 搜索列表
+.ant-pro-table-search {
+  margin-bottom: 8px !important;
+}
+
+// 内容区布局
+.ant-pro-basicLayout-content {
+  margin: 0;
+
+  .ant-pro-page-container {
+    margin: 0;
+  }
+
+  .ant-pro-page-container-children-content {
+    margin: 0 24px;
+  }
+}

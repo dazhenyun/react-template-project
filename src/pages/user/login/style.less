@@ -1,0 +1,34 @@
+@import '~antd/es/style/themes/default.less';
+
+.main {
+  width: 80%;
+  max-width: 368px;
+  margin: 0 auto;
+
+  :global {
+    .loginInput {
+      border: none;
+      border-bottom: solid 1px #D8D8D8;
+      box-shadow: none;
+      border-radius: 0px;
+
+      &:focus {
+        border-color: @primary-color;
+      }
+
+      :global {
+        .ant-input-prefix {
+          color: @primary-color;
+          margin-right: 10px;
+        }
+      }
+
+    }
+
+    .loginBtn {
+      width: 100%;
+      margin-top: 60px;
+      background-image: linear-gradient(90deg, #213AD0 0%, #315BFD 100%);
+    }
+  }
+}
