@@ -75,6 +75,7 @@ export function getCloumns({ isEdit, appMenuData, tableBtnSet }) {
       dataIndex: 'option',
       valueType: 'option',
       hideInForm: true,
+      width: 100,
       render: tableBtnSet
     },
   ];

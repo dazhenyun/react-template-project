@@ -21,21 +21,22 @@
   margin-bottom: 0;
 }
 
-// 表格
-.ant-table-wrapper {
-  padding: 0 20px;
+.ant-table-pagination.ant-pagination{
+  margin-bottom: 0 !important;
 }
 
-.noPadding .ant-table-wrapper {
-  padding: 0;
-
-  .ant-table.ant-table-middle .ant-table-tbody {
-    padding: 0
+.ant-pro-table{
+  .ant-card-body{
+    padding-bottom: 16px;
   }
+}
 
+.ant-table-wrapper {
   .ant-table-tbody .ant-table-row td.ant-table-cell:first-child {
     padding-left: 12px;
-
+  }
+  .ant-table-tbody .ant-table-row td.ant-table-cell:last-child{
+    padding-right: 12px;
   }
 }
 
@@ -72,7 +73,7 @@
 // 菜单ICON
 .ant-menu-item .anticon,
 .ant-menu-submenu-title .anticon {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 // 菜单ICON
@@ -85,8 +86,8 @@
 // 面包屑
 .ant-page-header {
   background-color: #f0f2f5 !important;
-  padding-bottom: 8px !important;
-  padding-top: 8px !important;
+  padding-bottom: 12px !important;
+  padding-top: 12px !important;
 }
 
 // 搜索列表
@@ -104,5 +105,20 @@
 
   .ant-pro-page-container-children-content {
     margin: 0 24px;
+  }
+}
+
+// 菜单栏
+.ant-pro-sider .ant-layout-sider-children {
+  padding-top: 16px;
+}
+
+// 头部背景色
+.ant-pro-global-header-layout-mix {
+  background: #fff !important;
+
+  h1,
+  .name {
+    color: @text-color  !important;
   }
 }

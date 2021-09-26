@@ -1,8 +1,12 @@
+/*
+ * @CreatDate: 2021-09-26 09:29:53 
+ * @Describe: 角色管理
+ */
+
 import React, { useRef, useState } from 'react';
 import { Button, message } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
 import { GTable } from '@/components';
-import { TableBtns } from 'dz-com';
+import { TableBtns } from '@dzo/com';
 import { queryRoleList, delRole } from '@/services/system';
 import { isAuth } from '@/utils/common';
 import { getCloumns } from './map';
@@ -49,7 +53,7 @@ const Role = () => {
         toolBarRender={() => [
           isAuth("system:role:add") &&
           <Button key="add" type="primary" onClick={() => { setEditVisible(true) }}>
-            <PlusOutlined /> 新增角色
+            新增角色
           </Button>
         ]}
         request={queryRoleList}

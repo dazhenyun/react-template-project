@@ -1,12 +1,12 @@
 // https://umijs.org/config/
 import { defineConfig } from 'umi';
-import defaultSettings from './defaultSettings';
 import proxy from './proxy';
 import router from './router';
 import theme from './theme';
 
-const { REACT_APP_ENV } = process.env;
-export default defineConfig({
+const { REACT_APP_ENV, NODE_ENV } = process.env;
+
+let config = {
   hash: true,
   antd: {},
   dva: {
@@ -36,4 +36,20 @@ export default defineConfig({
   manifest: {
     basePath: '/',
   },
-});
+}
+
+if (NODE_ENV === 'development') {
+  config = {
+    ...config,
+    mfsu: {},
+    webpack5: {},
+  }
+} else {
+  config = {
+    ...config,
+    // mfsu: { production: { output: '.mfsu-production' } },
+    extraBabelPlugins: ['transform-remove-console']
+  }
+}
+
+export default defineConfig(config);

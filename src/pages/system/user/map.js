@@ -169,6 +169,7 @@ export function getCloumns({ isEdit, roleList = [], tableBtnSet }) {
       dataIndex: 'option',
       valueType: 'option',
       hideInForm: true,
+      width: 200,
       render: tableBtnSet
     },
   ];

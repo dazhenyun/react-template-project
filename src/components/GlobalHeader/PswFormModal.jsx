@@ -1,5 +1,5 @@
 import React from 'react';
-import { ModalForm } from 'dz-com';
+import { ModalForm } from '@dzo/com';
 import { connect } from 'umi';
 import { message } from 'antd';
 

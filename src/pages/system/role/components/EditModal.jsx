@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { connect } from 'umi';
 import { message } from 'antd';
-import { ModalForm } from 'dz-com';
+import { ModalForm } from '@dzo/com';
 import { addRole, updateRole } from '@/services/system';
 import { getCloumns } from '../map';
 

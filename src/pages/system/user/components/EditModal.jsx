@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { ModalForm } from 'dz-com';
+import { ModalForm } from '@dzo/com';
 import { message } from 'antd';
 import { connect } from 'umi';
 import { addUser, updateUser } from '@/services/system';

@@ -1,8 +1,12 @@
+/*
+ * @CreatDate: 2021-09-26 09:28:20 
+ * @Describe: 用户管理
+ */
+
 import React, { useState, useRef } from 'react';
 import { Button, message } from 'antd';
 import { GTable } from '@/components';
-import { PlusOutlined } from '@ant-design/icons';
-import { TableBtns } from 'dz-com';
+import { TableBtns } from '@dzo/com';
 import { queryUserList, delUser, changeStatus, } from '@/services/system';
 import { isAuth } from '@/utils/common';
 import PasswordModal from './components/PasswordModal';
@@ -72,7 +76,7 @@ const User = () => {
         toolBarRender={() => [
           isAuth("system:user:add") &&
           <Button key="add" type="primary" onClick={() => { setEditVisible(true); }}>
-            <PlusOutlined /> 新增用户
+            新增用户
           </Button>
         ]}
         request={queryUserList}

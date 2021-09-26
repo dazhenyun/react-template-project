@@ -1,8 +1,12 @@
-import { PlusOutlined } from '@ant-design/icons';
+/*
+ * @CreatDate: 2021-09-26 09:16:12 
+ * @Describe: 菜单管理
+ */
+
+import React, { useRef, useState, useEffect } from 'react';
 import { Button, message, Tag } from 'antd';
 import { keyBy } from 'lodash';
-import { TableBtns, ComIcon } from 'dz-com';
-import React, { useRef, useState, useEffect } from 'react';
+import { TableBtns, ComIcon } from '@dzo/com';
 import { GTable } from '@/components';
 import { queryMenuList, delMenu, updateMenu, addMenu, updateMenuStatus } from '@/services/system';
 import { tranfarTree, isAuth } from '@/utils/common';
@@ -100,33 +104,38 @@ const Menu = () => {
       title: '操作',
       dataIndex: 'option',
       valueType: 'option',
+      width: 140,
       render: (_, item) => {
-        const btns = [{
-          name: '编辑',
-          auth: 'system:menu:edit',
-          method: () => {
-            setRecord(item);
-            setVisible(true);
+        const btns = [
+          {
+            name: '编辑',
+            auth: 'system:menu:edit',
+            method: () => {
+              setRecord(item);
+              setVisible(true);
+            },
           },
-        }, {
-          name: '删除',
-          auth: 'system:menu:delete',
-          method: () => {
-            handleRemove(item);
+          {
+            type: 'status',
+            method: async (v) => {
+              const { success } = await updateMenuStatus({ id: item.id, status: v });
+              if (success) {
+                message.success(`操作成功`);
+                queryMenuList();
+              }
+            },
+            auth: 'system:menu:status',
           },
-          type: 'confirm',
-          confirmText: '确定删除菜单？',
-        }, {
-          type: 'status',
-          method: async (v) => {
-            const { success } = await updateMenuStatus({ id: item.id, status: v });
-            if (success) {
-              message.success(`操作成功`);
-              queryMenuList();
-            }
-          },
-          auth: 'system:menu:status',
-        },];
+          {
+            name: '删除',
+            auth: 'system:menu:delete',
+            method: () => {
+              handleRemove(item);
+            },
+            type: 'confirm',
+            confirmText: '确定删除菜单？',
+          }
+        ];
 
         return (<TableBtns buttons={btns} />)
       },
@@ -141,7 +150,7 @@ const Menu = () => {
         toolBarRender={() => [
           isAuth("system:menu:add") &&
           <Button type="primary" key="add" onClick={() => { setVisible(true) }}>
-            <PlusOutlined /> 新增菜单
+            新增菜单
           </Button>
         ]}
         dataSource={menuTree}

@@ -63,9 +63,17 @@ const BasicLayout = props => {
         if (newRouters?.length) { // 最后一层面包屑不让点击，因为会有路径传参的问题
           newRouters[newRouters.length - 1].path = null;
         }
+
         return newRouters;
       }}
-
+      itemRender={(route, params, routes, paths) => {
+        const first = routes.slice(1, routes.length - 1).indexOf(route) === 0;
+        return !first ? (
+          <span>{route.breadcrumbName}</span>
+        ) : (
+          <Link to={route.path}>{route.breadcrumbName}</Link>
+        );
+      }}
       menuDataRender={() => {
         return menuTreeData;
       }}

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { SYSTEM_MENU_TYPE, GLOBAL_ENABLE_STATUS_ENUM, GLOBAL_IS } from '@/utils/constant';
-import { ModalForm } from 'dz-com';
+import { ModalForm } from '@dzo/com';
 import { values } from 'lodash';
 
 const GLOBAL_ENABLE_STATUS = values(GLOBAL_ENABLE_STATUS_ENUM);

@@ -39,7 +39,9 @@ class SecurityLayout extends React.Component {
         type: 'user/fetchCurrent',
       }).then((data = {}) => {
         const { userName = '', mobile = '' } = data;
-        if (userName || mobile) {
+        const { NODE_ENV } = process.env;
+
+        if ((userName || mobile) && NODE_ENV !== 'development') {
           gWatermark.render({ text: `${userName} ${mobile}` });
         }
       });

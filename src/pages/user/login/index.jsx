@@ -2,7 +2,7 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { Button, Checkbox } from 'antd';
 import React, { useState, useRef, useEffect } from 'react';
 import { connect } from 'umi';
-import { GForm } from 'dz-com';
+import { GForm } from '@dzo/com';
 import store from 'store';
 import styles from './style.less';
 
@@ -81,7 +81,7 @@ const Login = props => {
         loading={submitting}
         onClick={() => { formRef.current.onValidate(handleSubmit) }}>
         登录
-        </Button>
+      </Button>
 
     </div>
   );
